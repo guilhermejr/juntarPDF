@@ -42,9 +42,9 @@ def main():
 	output = PdfFileWriter()
 	i = 1
 	while i < qtdParametros:
-		[output.addPage(PdfFileReader(file(sys.argv[i],"rb")).getPage(page_num)) for page_num in range(PdfFileReader(file(sys.argv[i],"rb")).numPages)]
+		[output.addPage(PdfFileReader(open(sys.argv[i],"rb")).getPage(page_num)) for page_num in range(PdfFileReader(open(sys.argv[i],"rb")).numPages)]
 		i+=1
-	output.write(file("juntado.pdf","wb"))
+	output.write(open("juntado.pdf","wb"))
 
 if __name__ == "__main__":
     main()
